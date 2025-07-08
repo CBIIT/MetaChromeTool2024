@@ -1763,6 +1763,11 @@ def batch_processing(use_current_settings: bool):
                         df_common_dna_fish = pd.DataFrame(processor.dna_fish_centroids, columns=['Y', 'X'])
                         df_common_cenpc = pd.DataFrame(processor.cenpc_centroids, columns=['Y', 'X'])
                         
+                        # Create an empty common nuclei array for non-segmentation mode
+                        common_nuclei = np.zeros_like(images[0])
+                        common_nuclei_path = os.path.join(intermediate_path, "common_nuclei.npy")
+                        np.save(common_nuclei_path, common_nuclei)
+                        
                     # Case 2: With Segmentation (checkbox unchecked)
                     else:
                         # Segment DAPI
@@ -1781,7 +1786,11 @@ def batch_processing(use_current_settings: bool):
                             raise ValueError("No common regions found")
                         matched_count = len(np.unique(common_nuclei)) - 1
                         
-                        # Get spots in common regions
+                        # Save common nuclei to intermediate results
+                        common_nuclei_path = os.path.join(intermediate_path, "common_nuclei.npy")
+                        np.save(common_nuclei_path, common_nuclei)
+                        
+                        # Filter spots to only those in common regions
                         df_common_dna_fish = processor.get_spots_in_common_regions(
                             pd.DataFrame(processor.dna_fish_centroids, columns=['Y', 'X']), 
                             common_nuclei
