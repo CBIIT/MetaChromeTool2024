@@ -77,6 +77,8 @@ Before beginning, ensure that [Anaconda](https://www.anaconda.com/products/indiv
 
 After launching Anaconda, follow the steps below to create a new environment and install the necessary packages for Napari.
 
+**Note for Apple Silicon (M1/M2/M3) Mac users:** Napari and PyQt can sometimes have compatibility issues on Apple Silicon. You may experience hiccups such as crashes, slow rendering, or missing UI elements. If that happens, try installing Napari with the `napari[all]` bundle via pip, or use the official [Napari Installation Guide for Apple Silicon](https://napari.org/stable/tutorials/fundamentals/installation.html) for workarounds.
+
 1. Create a new environment with Python 3.10:
     ```bash
     conda create -y -n napari-env -c conda-forge python=3.10
