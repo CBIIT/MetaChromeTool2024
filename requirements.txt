@@ -7,5 +7,5 @@ matplotlib>=3.3.0
 magicgui>=0.2.0
 qtpy>=1.9.0
 superqt>=0.2.0
-cellpose>=2.0.0
+cellpose>=4.0.0
 Pillow>=8.0.0
