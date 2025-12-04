@@ -21,6 +21,15 @@ This repository includes pre-trained Cellpose models for chromosome segmentation
 
 **Note:** If you clone this repository, Git LFS will automatically download these model files. If you installed via pip, the models will be included in the package.
 
+## Training Data
+
+The training data used to develop and validate the Cellpose models in this tool is publicly available on Figshare:
+
+**[MetaChrome Training Dataset](https://figshare.com/articles/dataset/training_data/30780305)**  
+DOI: [10.6084/m9.figshare.30780305](https://doi.org/10.6084/m9.figshare.30780305)
+
+This dataset contains annotated metaphase chromosome images used for training the segmentation models. For more details about the methodology and validation, please refer to the [bioRxiv preprint](https://www.biorxiv.org/content/10.1101/2025.09.02.673813v1).
+
 ## Installation Instructions
 
 ### Option 1: Install from source (Recommended)
